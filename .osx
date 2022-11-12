@@ -258,14 +258,14 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 ###############################################################################
 
 # Install System Software updates
-softwareupdate -i -a
-/usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+# softwareupdate -i -a
 
 # Enable System Gatekeeper
 spctl --master-enable
 
 # Enable System Firewall
 defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+/usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 
 ###############################################################################
 # Kill/restart affected applications                                          #
